@@ -5,8 +5,6 @@ import { ExternalLink, TYPE } from 'theme'
 import { useEthPrices } from 'hooks/useEthPrices'
 import { formatDollarAmount } from 'utils/numbers'
 import Polling from './Polling'
-import { useActiveNetworkVersion } from '../../state/application/hooks'
-import { SupportedNetwork } from '../../constants/networks'
 
 const Wrapper = styled.div`
   width: 100%;
@@ -25,31 +23,21 @@ const StyledLink = styled(ExternalLink)`
 
 const TopBar = () => {
   const ethPrices = useEthPrices()
-  const [activeNetwork] = useActiveNetworkVersion()
   return (
     <Wrapper>
       <RowBetween>
         <Polling />
         <AutoRow gap="6px">
           <RowFixed>
-            {activeNetwork.id === SupportedNetwork.CELO ? (
-              <Item>Celo Price:</Item>
-            ) : activeNetwork.id === SupportedNetwork.BNB ? (
-              <Item>BNB Price:</Item>
-            ) : activeNetwork.id === SupportedNetwork.AVALANCHE ? (
-              <Item>AVAX Price:</Item>
-            ) : (
-              <Item>Eth Price:</Item>
-            )}
+            <Item>ETH Price:</Item>
             <Item fontWeight="700" ml="4px">
               {formatDollarAmount(ethPrices?.current)}
             </Item>
           </RowFixed>
         </AutoRow>
         <AutoRow gap="6px" style={{ justifyContent: 'flex-end' }}>
-          <StyledLink href="https://v2.info.uniswap.org/#/">V2 Analytics</StyledLink>
-          <StyledLink href="https://docs.uniswap.org/">Docs</StyledLink>
-          <StyledLink href="https://app.uniswap.org/#/swap">App</StyledLink>
+          <StyledLink href="https://docs.aperture.finance/">Docs</StyledLink>
+          <StyledLink href="https://app.aperture.finance/swap">App</StyledLink>
         </AutoRow>
       </RowBetween>
     </Wrapper>

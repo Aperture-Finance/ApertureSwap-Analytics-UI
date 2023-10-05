@@ -80,7 +80,7 @@ const MenuItem = styled(ExternalLink)`
   }
 `
 
-const CODE_LINK = 'https://github.com/Uniswap/uniswap-v3-info'
+const CODE_LINK = 'https://github.com/Aperture-Finance/ApertureSwap-Analytics-UI'
 
 export default function Menu() {
   const node = useRef<HTMLDivElement>()
@@ -97,11 +97,11 @@ export default function Menu() {
 
       {open && (
         <MenuFlyout>
-          <MenuItem id="link" href="https://uniswap.org/">
+          <MenuItem id="link" href="https://www.aperture.finance">
             <Info size={14} />
-            About
+            Website
           </MenuItem>
-          <MenuItem id="link" href="https://docs.uniswap.org/">
+          <MenuItem id="link" href="http://docs.aperture.finance">
             <BookOpen size={14} />
             Docs
           </MenuItem>
@@ -109,7 +109,7 @@ export default function Menu() {
             <Code size={14} />
             Github
           </MenuItem>
-          <MenuItem id="link" href="https://discord.gg/FCfyBSbCU5">
+          <MenuItem id="link" href="https://discord.com/invite/cWHQFH3GTz">
             <MessageCircle size={14} />
             Discord
           </MenuItem>

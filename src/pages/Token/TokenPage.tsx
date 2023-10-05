@@ -38,7 +38,7 @@ import { MonoSpace } from 'components/shared'
 import dayjs from 'dayjs'
 import { useActiveNetworkVersion } from 'state/application/hooks'
 import { networkPrefix } from 'utils/networkPrefix'
-import { EthereumNetworkInfo } from 'constants/networks'
+import { MantaPacificNetworkInfo } from 'constants/networks'
 import { GenericImageWrapper } from 'components/Logo'
 // import { SmallOptionButton } from '../../components/Button'
 import { useCMCLink } from 'hooks/useCMCLink'
@@ -224,7 +224,7 @@ export default function TokenPage({
                     <TYPE.main ml={'6px'} fontSize="20px">
                       ({tokenData.symbol})
                     </TYPE.main>
-                    {activeNetwork === EthereumNetworkInfo ? null : (
+                    {activeNetwork === MantaPacificNetworkInfo ? null : (
                       <GenericImageWrapper src={activeNetwork.imageURL} style={{ marginLeft: '8px' }} size={'26px'} />
                     )}
                   </RowFixed>
@@ -233,7 +233,7 @@ export default function TokenPage({
                     (<Percent value={tokenData.priceUSDChange} />)
                   </RowFlat>
                 </AutoColumn>
-                {activeNetwork !== EthereumNetworkInfo ? null : (
+                {activeNetwork !== MantaPacificNetworkInfo ? null : (
                   <RowFixed>
                     <StyledExternalLink href={`https://app.uniswap.org/#/add/${address}`}>
                       <ButtonGray width="170px" mr="12px" height={'100%'} style={{ height: '44px' }}>
