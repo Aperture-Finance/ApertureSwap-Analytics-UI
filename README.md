@@ -1,12 +1,14 @@
-## Uniswap Info V3
+## ApertureSwap Analytics Info
 
-An open sourced interface for Uniswap V3 analytics. 
+An open sourced interface for ApertureSwap analytics. 
 
-Info URL: https://info.uniswap.org/#/
+Info URL: (to be determined)
 
 ## Development
 
-### Install Dependencies
+### Environment
+
+Need to use NodeJS v16.
 
 ```bash
 yarn
@@ -17,8 +19,3 @@ yarn
 ```bash
 yarn start
 ```
-
-## Contributions
-
-**Please open all pull requests against the `master` branch.**
-CI checks will run against all PRs.
