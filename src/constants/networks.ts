@@ -25,7 +25,7 @@ export const MantaPacificNetworkInfo: NetworkInfo = {
   bgColor: '#fc077d',
   primaryColor: '#fc077d',
   secondaryColor: '#2172E5',
-  imageURL: 'https://manta.network/assets/img/logo.svg',
+  imageURL: 'https://pacific.manta.network/favicon.ico',
 }
 
 export const SUPPORTED_NETWORK_VERSIONS: NetworkInfo[] = [MantaPacificNetworkInfo]
