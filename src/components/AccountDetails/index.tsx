@@ -310,7 +310,7 @@ export default function AccountDetails({ toggleWalletModal, ENSName, openOptions
                             href={getEtherscanLink(chainId, ENSName, 'address', activeNetwork)}
                           >
                             <LinkIcon size={16} />
-                            <span style={{ marginLeft: '4px' }}>View on Etherscan</span>
+                            <span style={{ marginLeft: '4px' }}>View on Block Explorer</span>
                           </AddressLink>
                         )}
                       </div>
@@ -332,7 +332,7 @@ export default function AccountDetails({ toggleWalletModal, ENSName, openOptions
                             href={getEtherscanLink(chainId, account, 'address', activeNetwork)}
                           >
                             <LinkIcon size={16} />
-                            <span style={{ marginLeft: '4px' }}>View on Etherscan</span>
+                            <span style={{ marginLeft: '4px' }}>View on Block Explorer</span>
                           </AddressLink>
                         )}
                       </div>

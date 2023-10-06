@@ -1,10 +1,5 @@
 import { ApolloClient, InMemoryCache } from '@apollo/client'
 
-export const healthClient = new ApolloClient({
-  uri: 'https://api.thegraph.com/index-node/graphql',
-  cache: new InMemoryCache(),
-})
-
 export const client = new ApolloClient({
   uri: 'https://d2vin613o4opvi.cloudfront.net/subgraphs/name/aperture/uniswap-v3',
   cache: new InMemoryCache({

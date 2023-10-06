@@ -1,6 +1,6 @@
 import { Token } from '@uniswap/sdk-core'
 import { NetworkInfo } from 'constants/networks'
-import { CELO_ADDRESS, MATIC_ADDRESS, WETH_ADDRESSES } from '../constants'
+import { WETH_ADDRESSES } from '../constants'
 
 export interface SerializedToken {
   chainId: number
