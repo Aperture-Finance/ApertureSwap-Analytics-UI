@@ -32,6 +32,8 @@ const getTokenLogoURL = ({ address, chainId }: { address: string; chainId: Chain
         return 'https://assets.coingecko.com/coins/images/18834/small/wstETH.png'
       case getAddress('0x6e9655611b42c10b9af25b6ca08be349df45c370'):
         return 'https://assets.coingecko.com/coins/images/20764/small/reth.png'
+      case getAddress('0x80137510979822322193fc997d400d5a6c747bf7'):
+        return 'https://app.aperture.finance/stone-logo.svg'
       default:
         return `https://raw.githubusercontent.com/uniswap/assets/master/blockchains/${chainIdToNetworkName(
           chainId

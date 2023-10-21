@@ -1,7 +1,7 @@
 import { ApolloClient, InMemoryCache } from '@apollo/client'
 
 export const client = new ApolloClient({
-  uri: 'https://d2vin613o4opvi.cloudfront.net/subgraphs/name/aperture/uniswap-v3',
+  uri: 'https://api.goldsky.com/api/public/project_clnz7akg41cv72ntv0uhyd3ai/subgraphs/aperture/uniswap-v3/gn',
   cache: new InMemoryCache({
     typePolicies: {
       Token: {
@@ -29,7 +29,8 @@ export const client = new ApolloClient({
 })
 
 export const blockClient = new ApolloClient({
-  uri: 'https://d2vin613o4opvi.cloudfront.net/subgraphs/name/aperture/manta-pacific-blocks',
+  uri:
+    'https://api.goldsky.com/api/public/project_clnz7akg41cv72ntv0uhyd3ai/subgraphs/aperture/manta-pacific-blocks/gn',
   cache: new InMemoryCache(),
   queryDeduplication: true,
   defaultOptions: {
