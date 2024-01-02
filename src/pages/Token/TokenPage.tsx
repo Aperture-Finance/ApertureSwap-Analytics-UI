@@ -43,6 +43,7 @@ import { GenericImageWrapper } from 'components/Logo'
 // import { SmallOptionButton } from '../../components/Button'
 import { useCMCLink } from 'hooks/useCMCLink'
 import CMCLogo from '../../assets/images/cmc.png'
+import { getAddress } from 'ethers/lib/utils'
 
 const PriceText = styled(TYPE.label)`
   font-size: 36px;
@@ -235,7 +236,11 @@ export default function TokenPage({
                 </AutoColumn>
                 {activeNetwork !== MantaPacificNetworkInfo ? null : (
                   <RowFixed>
-                    <StyledExternalLink href={`https://app.uniswap.org/#/add/${address}`}>
+                    <StyledExternalLink
+                      href={`https://app.aperture.finance/new-position?chainId=169&tokenA=${getAddress(address)}-${
+                        address === '0x0dc808adce2099a9f62aa87d9670745aba741746'
+                      }`}
+                    >
                       <ButtonGray width="170px" mr="12px" height={'100%'} style={{ height: '44px' }}>
                         <RowBetween>
                           <Download size={24} />
@@ -243,7 +248,7 @@ export default function TokenPage({
                         </RowBetween>
                       </ButtonGray>
                     </StyledExternalLink>
-                    <StyledExternalLink href={`https://app.uniswap.org/#/swap?inputCurrency=${address}`}>
+                    <StyledExternalLink href={'https://app.aperture.finance/swap?chainId=169'}>
                       <ButtonPrimary width="100px" bgColor={backgroundColor} style={{ height: '44px' }}>
                         Trade
                       </ButtonPrimary>

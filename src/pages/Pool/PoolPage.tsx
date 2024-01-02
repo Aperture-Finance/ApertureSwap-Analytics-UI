@@ -29,6 +29,7 @@ import { useActiveNetworkVersion } from 'state/application/hooks'
 import { networkPrefix } from 'utils/networkPrefix'
 import { MantaPacificNetworkInfo } from 'constants/networks'
 import { GenericImageWrapper } from 'components/Logo'
+import { getAddress } from 'ethers/lib/utils'
 
 const ContentLayout = styled.div`
   display: grid;
@@ -207,7 +208,13 @@ export default function PoolPage({
             {activeNetwork !== MantaPacificNetworkInfo ? null : (
               <RowFixed>
                 <StyledExternalLink
-                  href={`https://app.aperture.finance/new-position?chainId=169&tokenA=${poolData.token0.address}-false&tokenB=${poolData.token1.address}-false&feeTier=${poolData.feeTier}`}
+                  href={`https://app.aperture.finance/new-position?chainId=169&tokenA=${getAddress(
+                    poolData.token0.address
+                  )}-${poolData.token0.address === '0x0dc808adce2099a9f62aa87d9670745aba741746'}&tokenB=${getAddress(
+                    poolData.token1.address
+                  )}-${poolData.token1.address === '0x0dc808adce2099a9f62aa87d9670745aba741746'}&feeTier=${
+                    poolData.feeTier
+                  }`}
                 >
                   <ButtonGray width="170px" mr="12px" style={{ height: '44px' }}>
                     <RowBetween>
