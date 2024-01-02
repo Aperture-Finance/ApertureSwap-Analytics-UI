@@ -207,7 +207,7 @@ export default function PoolPage({
             {activeNetwork !== MantaPacificNetworkInfo ? null : (
               <RowFixed>
                 <StyledExternalLink
-                  href={`https://app.uniswap.org/#/add/${poolData.token0.address}/${poolData.token1.address}/${poolData.feeTier}`}
+                  href={`https://app.aperture.finance/new-position?chainId=169&tokenA=${poolData.token0.address}-false&tokenB=${poolData.token1.address}-false&feeTier=${poolData.feeTier}`}
                 >
                   <ButtonGray width="170px" mr="12px" style={{ height: '44px' }}>
                     <RowBetween>
@@ -216,9 +216,7 @@ export default function PoolPage({
                     </RowBetween>
                   </ButtonGray>
                 </StyledExternalLink>
-                <StyledExternalLink
-                  href={`https://app.uniswap.org/#/swap?inputCurrency=${poolData.token0.address}&outputCurrency=${poolData.token1.address}`}
-                >
+                <StyledExternalLink href={`https://app.aperture.finance/swap?chainId=169`}>
                   <ButtonPrimary width="100px" style={{ height: '44px' }}>
                     Trade
                   </ButtonPrimary>
