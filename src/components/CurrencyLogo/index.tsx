@@ -32,8 +32,12 @@ const getTokenLogoURL = ({ address, chainId }: { address: string; chainId: Chain
         return 'https://assets.coingecko.com/coins/images/18834/small/wstETH.png'
       case getAddress('0x6e9655611b42c10b9af25b6ca08be349df45c370'):
         return 'https://assets.coingecko.com/coins/images/20764/small/reth.png'
-      case getAddress('0x80137510979822322193fc997d400d5a6c747bf7'):
-        return 'https://app.aperture.finance/stone-logo.svg'
+      case getAddress('0xec901da9c68e90798bbbb74c11406a32a70652c3'):
+        return 'https://storage.googleapis.com/ks-setting-1d682dca/dee351e5-ff61-4a8f-994d-82f3078119661696785945490.png'
+      case getAddress('0xbdad407f77f44f7da6684b416b1951eca461fb07'):
+        return 'https://etherscan.io/token/images/mountainusdm_32.png'
+      case getAddress('0x20a512dbdc0d006f46e6ca11329034eb3d18c997'):
+        return 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiByeD0iMTAiIGZpbGw9IiMwQjBCMTMiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik03LjQ1NTIgMTMuMDY0MUgxMC41MTI5VjE0LjgzMzNINC4xNjY3NVY1LjgzMzM0SDYuMzU5MDVWNy41ODk3NVY5LjQ3NDM3VjExLjA3NjlWMTMuMDY0MUg3LjQ1NTJaTTE0Ljc0NDIgMTAuMjE4QzE1LjI2NiAxMC4zMjk1IDE1LjY4MzkgMTAuNTg3MiAxNi4wMDA2IDEwLjk5MzZDMTYuMzE3MyAxMS40IDE2LjQ3NSAxMS44NjI4IDE2LjQ3NSAxMi4zODQ2QzE2LjQ3NSAxMy4xMzcyIDE2LjIxMjEgMTMuNzMzMyAxNS42ODY1IDE0LjE3MzFDMTUuMTYwOSAxNC42MTI4IDE0LjQyNzUgMTQuODMzMyAxMy40ODc4IDE0LjgzMzNIMTIuMjY2OVYxMy4wNjQxSDEzLjEwMzJDMTMuNDcxMSAxMy4wNjQxIDEzLjc1NDQgMTIuOTgwOCAxMy45NTU3IDEyLjgxNDFDMTQuMTU3IDEyLjY0NzQgMTQuMjU3IDEyLjQwNjQgMTQuMjU3IDEyLjA4OThDMTQuMjU3IDExLjc3MzEgMTQuMTUxOSAxMS41MjU3IDEzLjk0MjkgMTEuMzQ2MkMxMy43MzM5IDExLjE2NjcgMTMuNDQ1NSAxMS4wNzY5IDEzLjA3NzUgMTEuMDc2OUg4LjExMzAyVjkuNDc0MzdIMTIuOTIzN0MxMy4yODI3IDkuNDc0MzcgMTMuNTU4MyA5LjM5NDg4IDEzLjc1MDYgOS4yMzcxOUMxMy45NDI5IDkuMDc5NSAxNC4wMzkxIDguODQ2MTYgMTQuMDM5MSA4LjUzODQ3QzE0LjAzOTEgOC4yMzA3OCAxMy45NDI5IDcuOTk2MTYgMTMuNzUwNiA3LjgzMzM0QzEzLjU1ODMgNy42NzA1MiAxMy4yODI3IDcuNTg5NzUgMTIuOTIzNyA3LjU4OTc1SDguMTEzMDJWNS44MzMzNEgxMy4zNDY4QzE0LjI2MDkgNS44MzMzNCAxNC45Nzc1IDYuMDQyMzIgMTUuNDk0MiA2LjQ2MTU1QzE2LjAxMDggNi44ODA3OCAxNi4yNjk4IDcuNDQ4NzMgMTYuMjY5OCA4LjE2NjY4QzE2LjI2OTggOC42OTYxNiAxNi4xMzE0IDkuMTM3MTkgMTUuODUzMiA5LjQ4NzE5QzE1LjU3NSA5LjgzNzE5IDE1LjIwNTcgMTAuMDgwOCAxNC43NDQyIDEwLjIxOFoiIGZpbGw9IiNENjZFQ0IiLz4KPC9zdmc+Cg=='
       default:
         return `https://raw.githubusercontent.com/uniswap/assets/master/blockchains/${chainIdToNetworkName(
           chainId
