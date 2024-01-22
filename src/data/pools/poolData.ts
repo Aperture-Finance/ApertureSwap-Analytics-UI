@@ -6,6 +6,7 @@ import { PoolData } from 'state/pools/reducer'
 import { get2DayChange } from 'utils/data'
 import { formatTokenName, formatTokenSymbol } from 'utils/tokens'
 import { useActiveNetworkVersion, useClients } from 'state/application/hooks'
+import dayjs from 'dayjs'
 
 export const POOLS_BULK = (block: number | undefined, pools: string[]) => {
   let poolString = `[`
@@ -114,24 +115,35 @@ export function usePoolDatas(
 
   // get blocks from historic timestamps
   const [t24, t48, tWeek] = useDeltaTimestamps()
-  const { blocks, error: blockError } = useBlocksFromTimestamps([t24, t48, tWeek])
-  const [block24, block48, blockWeek] = blocks ?? []
+  const t0 = dayjs().unix()
+  const { blocks, error: blockError } = useBlocksFromTimestamps([t0, t24, t48, tWeek])
+  const [block0, block24, block48, blockWeek] = blocks ?? []
 
-  const { loading, error, data } = useQuery<PoolDataResponse>(POOLS_BULK(undefined, poolAddresses), {
+  const { loading, error, data } = useQuery<PoolDataResponse>(POOLS_BULK(block0?.number, poolAddresses), {
     client: dataClient,
+    errorPolicy: 'ignore',
   })
 
   const { loading: loading24, error: error24, data: data24 } = useQuery<PoolDataResponse>(
     POOLS_BULK(block24?.number, poolAddresses),
-    { client: dataClient }
+    {
+      client: dataClient,
+      errorPolicy: 'ignore',
+    }
   )
   const { loading: loading48, error: error48, data: data48 } = useQuery<PoolDataResponse>(
     POOLS_BULK(block48?.number, poolAddresses),
-    { client: dataClient }
+    {
+      client: dataClient,
+      errorPolicy: 'ignore',
+    }
   )
   const { loading: loadingWeek, error: errorWeek, data: dataWeek } = useQuery<PoolDataResponse>(
     POOLS_BULK(blockWeek?.number, poolAddresses),
-    { client: dataClient }
+    {
+      client: dataClient,
+      errorPolicy: 'ignore',
+    }
   )
 
   const anyError = Boolean(error || error24 || error48 || blockError || errorWeek)
@@ -154,6 +166,7 @@ export function usePoolDatas(
         return accum
       }, {})
     : {}
+
   const parsed24 = data24?.pools
     ? data24.pools.reduce((accum: { [address: string]: PoolFields }, poolData) => {
         accum[poolData.id] = poolData
