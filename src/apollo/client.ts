@@ -1,7 +1,8 @@
 import { ApolloClient, InMemoryCache } from '@apollo/client'
 
 export const client = new ApolloClient({
-  uri: 'https://api.goldsky.com/api/public/project_clnz7akg41cv72ntv0uhyd3ai/subgraphs/aperture/uniswap-v3/gn',
+  uri:
+    'https://api.goldsky.com/api/public/project_clnz7akg41cv72ntv0uhyd3ai/subgraphs/aperture-manta-pacific/uniswap-v3/gn',
   cache: new InMemoryCache({
     typePolicies: {
       Token: {
