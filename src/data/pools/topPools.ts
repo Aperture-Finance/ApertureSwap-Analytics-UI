@@ -29,11 +29,9 @@ export function useTopPoolAddresses(): {
 } {
   const [currentNetwork] = useActiveNetworkVersion()
   const { dataClient } = useClients()
-
   const { loading, error, data } = useQuery<TopPoolsResponse>(TOP_POOLS, {
     client: dataClient,
     fetchPolicy: 'cache-first',
-    errorPolicy: 'ignore',
   })
 
   const formattedData = useMemo(() => {

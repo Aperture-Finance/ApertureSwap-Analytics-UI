@@ -8,7 +8,6 @@ import { TokenData } from 'state/tokens/reducer'
 import { useEthPrices } from 'hooks/useEthPrices'
 import { formatTokenSymbol, formatTokenName } from 'utils/tokens'
 import { useActiveNetworkVersion, useClients } from 'state/application/hooks'
-import dayjs from 'dayjs'
 
 export const TOKENS_BULK = (block: number | undefined, tokens: string[]) => {
   let tokenString = `[`
@@ -77,22 +76,19 @@ export function useFetchedTokenDatas(
 
   // get blocks from historic timestamps
   const [t24, t48, tWeek] = useDeltaTimestamps()
-  const t0 = dayjs().unix()
 
-  const { blocks, error: blockError } = useBlocksFromTimestamps([t0, t24, t48, tWeek])
-  const [block0, block24, block48, blockWeek] = blocks ?? []
+  const { blocks, error: blockError } = useBlocksFromTimestamps([t24, t48, tWeek])
+  const [block24, block48, blockWeek] = blocks ?? []
   const ethPrices = useEthPrices()
 
-  const { loading, error, data } = useQuery<TokenDataResponse>(TOKENS_BULK(block0?.number, tokenAddresses), {
+  const { loading, error, data } = useQuery<TokenDataResponse>(TOKENS_BULK(undefined, tokenAddresses), {
     client: dataClient,
-    errorPolicy: 'ignore',
   })
 
   const { loading: loading24, error: error24, data: data24 } = useQuery<TokenDataResponse>(
     TOKENS_BULK(parseInt(block24?.number), tokenAddresses),
     {
       client: dataClient,
-      errorPolicy: 'ignore',
     }
   )
 
@@ -100,7 +96,6 @@ export function useFetchedTokenDatas(
     TOKENS_BULK(parseInt(block48?.number), tokenAddresses),
     {
       client: dataClient,
-      errorPolicy: 'ignore',
     }
   )
 
@@ -108,7 +103,6 @@ export function useFetchedTokenDatas(
     TOKENS_BULK(parseInt(blockWeek?.number), tokenAddresses),
     {
       client: dataClient,
-      errorPolicy: 'ignore',
     }
   )
 
